@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel = "shortcut icon" type="image/png" href="/css/logo-3.png"> 
+  <title>What If...?</title>
+</head>
+<body>
+  <nav>
+    <h4>What If...?</h4>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/profile">Perfil</a></li>
+      <li><a href="/problems">Problemas</a></li>
+      <li><a href="/auth/logout">Logout</a></li>
+      <li><a href="/about">Sobre</a></li>
+    </ul>
+  </nav>
+
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-4">
+        <div class="card">
+          <div class="avatar-ctn">
+            <img src="/css/avatar.png" class="avatar" alt="user profile picture"/>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Usuário: {{user.name}}</h5>
+            <a href="#" class="btn btn-primary">E-mail: {{user.email}}</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-8">
+        <div class="card text-center">
+          <div class="card-header">
+            Perfil
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Olá, {{user.name}}! Bem-vindo de volta!</h5>
+            <p class="card-text">Este é o seu perfil.</p>
+          </div>
+          <div class="card-footer text-muted">
+            Introdução à Programação
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+</body>
+</html>
