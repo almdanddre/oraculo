@@ -25,59 +25,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cookieParser());
 
-/*app.post('/problems', function (req, res) {
-  var name = req.body.entrada1 + ' ' + req.body.entrada2 + ' ' + req.body.saida;
-  console.log(name);
-  var dataToSend;
-    // spawn new child process to call the python script
-    const python = spawn('python', ['merge-invertido.py', req.body.entrada1, req.body.entrada2, req.body.saida]);
-    // collect data from script
-    python.stdout.on('data', function (data) {
-     console.log('Pipe data from python script ...');
-     dataToSend = data.toString();
-    });
-    // in close event we are sure that stream from child process is closed
-    python.on('close', (code) => {
-    console.log(`child process close all stdio with code ${code}`);
-    // send data to browser
-    res.send(dataToSend)
-    });
-});*/
-
 
 //Define Routes
 app.use('/', require('./routes/pages'));
 app.use('/auth', require('./routes/auth'));
 
 
-app.get('/problems', function(request, response){
-  response.render("tela-problemas")
-});
 
-app.get('/contact', function(request, response){
-  //response.sendFile(__dirname + "/public/problems.html");
-});
-
-app.get('/about', function(request, response){
-  //response.sendFile(__dirname + "/public/problems.html");
-});
-
-
-
-/*const client = new Client({
-  connectionString: process.env.DATABASE_URL,
-  ssl: {
-    rejectUnauthorized: false
-  }
-});
-
-client.connect((error) => {
-  if(error) {
-    console.log(error)
-  } else {
-    console.log("MYSQL CONNECTED!")
-  }
-});*/
 
 const PORT = process.env.PORT || 8080
 var server = app.listen(PORT, function () {

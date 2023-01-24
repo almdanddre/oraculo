@@ -1,6 +1,6 @@
 const express = require('express');
-//const authController = require('../controllers/auth');
-//const problemController = require('../controllers/problem')
+const authController = require('../controllers/auth');
+
 const {spawn} = require('child_process');
 
 const router = express.Router();
@@ -18,7 +18,6 @@ router.get('/login', (req, res) => {
 });
 
 router.get('/profile', authController.isLoggedIn, (req, res) => {
-  //console.log(req.user);
   if( req.user ) {
     res.render('profile', {
       user: req.user
@@ -34,7 +33,7 @@ router.get('/problems', (req, res) => {
   if( req.user ) {
     res.render('problems')
   } else {
-    //res.redirect('/login');
+    res.redirect('/login');
   }
   
 });
@@ -44,7 +43,7 @@ router.get('/links', (req, res) => {
   if( req.user ) {
     res.render('links')
   } else {
-    //res.redirect('/login');
+    res.redirect('/login');
   }
   
 });
@@ -85,11 +84,11 @@ router.post('/problems', (req, res) => {  // guarda a rotina de enviar as entrad
   
 });
 
-/*router.get('/logout', (req, res) => {
+router.get('/logout', (req, res) => {
   res.render('login', {
     user: req.user
   });
-});*/
+});
 
 router.get('/about', (req, res) => {
   res.render('sobre')
