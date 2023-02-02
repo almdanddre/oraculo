@@ -1,6 +1,6 @@
 # Oráculo "What If..."
 
-Prova de conceito desenvolvido durante o mestrado na UFCG
+Prova de conceito desenvolvida durante o mestrado na UFCG
 
 ## Sobre
 
